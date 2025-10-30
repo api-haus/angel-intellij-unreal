@@ -52,7 +52,7 @@
                               implementationClass="com.github.sashi0034.angelintellij.editor.AngelScriptSpellCheckingStrategy"/>
 
         <!-- Status bar widget indicating Unreal/LSP connection state -->
-        <statusBarWidgetFactory implementation="com.github.sashi0034.angelintellij.ui.AngelScriptStatusBarWidgetFactory"/>
+        <statusBarWidgetFactory id="AngelScriptConnectionStatus" implementation="com.github.sashi0034.angelintellij.ui.AngelScriptStatusBarWidgetFactory"/>
 
         <!--        <lang.quoteHandler language="AngelScript"-->
         <!--                           implementationClass="com.github.sashi0034.angelintellij.editor.AngelScriptQuoteHandler"/>-->

@@ -24,6 +24,17 @@ jobs:
         with:
           ref: ${{ github.event.release.tag_name }}
 
+      # Free up disk space on hosted runner
+      - name: Free Disk Space
+        uses: jlumbroso/free-disk-space@v1.3.1
+        with:
+          tool-cache: true
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: true
+          swap-storage: true
+
       # Set up Java environment for the next steps
       - name: Setup Java
         uses: actions/setup-java@v4
