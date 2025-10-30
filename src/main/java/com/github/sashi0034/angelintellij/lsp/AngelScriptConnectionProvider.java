@@ -61,9 +61,12 @@ public class AngelScriptConnectionProvider extends OSProcessStreamConnectionProv
     public void start() {
         LOG.info("Starting AngelScript Language Server process");
         try {
+            ConnectionStateService.getInstance().setState(ConnectionStateService.State.CONNECTING);
             super.start();
+            ConnectionStateService.getInstance().setState(ConnectionStateService.State.CONNECTING);
             LOG.info("AngelScript Language Server process started successfully");
         } catch (Exception e) {
+            ConnectionStateService.getInstance().setState(ConnectionStateService.State.DISCONNECTED);
             LOG.error("Failed to start AngelScript Language Server", e);
             throw new RuntimeException("Failed to start AngelScript Language Server", e);
         }
@@ -73,6 +76,7 @@ public class AngelScriptConnectionProvider extends OSProcessStreamConnectionProv
     public void stop() {
         LOG.info("Stopping AngelScript Language Server");
         super.stop();
+        ConnectionStateService.getInstance().setState(ConnectionStateService.State.DISCONNECTED);
         LOG.info("AngelScript Language Server stopped");
     }
 }

@@ -45,6 +45,9 @@
         <spellchecker.support language="angelscript"
                               implementationClass="com.github.sashi0034.angelintellij.editor.AngelScriptSpellCheckingStrategy"/>
 
+        <!-- Status bar widget indicating Unreal/LSP connection state -->
+        <statusBarWidgetFactory implementation="com.github.sashi0034.angelintellij.ui.AngelScriptStatusBarWidgetFactory"/>
+
         <!--        <lang.quoteHandler language="AngelScript"-->
         <!--                           implementationClass="com.github.sashi0034.angelintellij.editor.AngelScriptQuoteHandler"/>-->
     </extensions>
@@ -82,4 +85,9 @@
         <!--FIXME        <listener class="com.github.sashi0034.angelintellij.listeners.MyApplicationActivationListener"-->
         <!--FIXME                  topic="com.intellij.openapi.application.ApplicationActivationListener"/>-->
     </applicationListeners>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Application-level service to track LSP/Unreal connection state -->
+        <applicationService serviceImplementation="com.github.sashi0034.angelintellij.lsp.ConnectionStateService"/>
+    </extensions>
 </idea-plugin>
