@@ -63,7 +63,7 @@ public class AngelScriptConnectionProvider extends OSProcessStreamConnectionProv
         try {
             ConnectionStateService.getInstance().setState(ConnectionStateService.State.CONNECTING);
             super.start();
-            ConnectionStateService.getInstance().setState(ConnectionStateService.State.CONNECTING);
+            ConnectionStateService.getInstance().setState(ConnectionStateService.State.CONNECTED);
             LOG.info("AngelScript Language Server process started successfully");
         } catch (Exception e) {
             ConnectionStateService.getInstance().setState(ConnectionStateService.State.DISCONNECTED);
