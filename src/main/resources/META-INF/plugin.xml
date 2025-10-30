@@ -1,7 +1,7 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>api.haus.unreal-angelscript</id>
-    <name>AngelScript Language Server</name>
+    <name>AngelScript for Unreal</name>
     <vendor>API.Haus</vendor>
 
     <description><![CDATA[
