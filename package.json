@@ -1,0 +1,12 @@
+{
+  "name": "angel-intellij-unreal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Build tools for bundling Unreal AngelScript Language Server",
+  "scripts": {
+    "bundle": "node bundle-lsp.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.19.0"
+  }
+}

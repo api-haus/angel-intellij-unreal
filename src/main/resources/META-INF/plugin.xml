@@ -31,11 +31,19 @@
         <lang.braceMatcher language="angelscript"
                            implementationClass="com.github.sashi0034.angelintellij.editor.AngelScriptBraceMatcher"/>
 
+        <!-- Parser definition disabled to rely fully on LSP for parsing/analysis -->
+        <!-- AngelScript for Unreal has different syntax than standard AngelScript, -->
+        <!-- so LSP server handles all parsing, error detection, and code analysis -->
         <lang.parserDefinition language="angelscript"
                                implementationClass="com.github.sashi0034.angelintellij.language.AngelScriptParserDefinition"/>
 
+        <!-- Syntax highlighter still uses the lexer for basic token-based highlighting -->
         <lang.syntaxHighlighterFactory language="angelscript"
                                        implementationClass="com.github.sashi0034.angelintellij.editor.AngelScriptSyntaxHighlighterFactory"/>
+
+        <!-- Spell checking strategy to exclude Unreal Engine macros (UPROPERTY, UFUNCTION, etc.) -->
+        <spellchecker.support language="angelscript"
+                              implementationClass="com.github.sashi0034.angelintellij.editor.AngelScriptSpellCheckingStrategy"/>
 
         <!--        <lang.quoteHandler language="AngelScript"-->
         <!--                           implementationClass="com.github.sashi0034.angelintellij.editor.AngelScriptQuoteHandler"/>-->

@@ -1,3 +1,3 @@
-[submodule "angel-lsp"]
-	path = angel-lsp
-	url = https://github.com/sashi0034/angel-lsp
+[submodule "unreal-angelscript-lsp"]
+	path = unreal-angelscript-lsp
+	url = https://github.com/Hazelight/vscode-unreal-angelscript.git

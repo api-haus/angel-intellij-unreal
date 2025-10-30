@@ -2,14 +2,24 @@
 REM Save the current directory
 set "ROOT_DIR=%cd%"
 
-REM Change to the server directory
-cd angel-lsp\server
+echo Installing root dependencies for bundling...
+call npm install
 
-REM Run the bundle script defined in package.json
-call npm run bundle
+echo.
+echo Installing language server dependencies...
+cd unreal-angelscript-lsp\language-server
+call npm install
+
+echo.
+echo Compiling TypeScript...
+call npx tsc
 
 REM Go back to the original directory
 cd /d "%ROOT_DIR%"
 
-REM Copy the generated file to the target location
-copy /Y angel-lsp\server\angelscript-language-server.js src\main\resources\js\angelscript-language-server.js
+echo.
+echo Bundling language server...
+call npm run bundle
+
+echo.
+echo Done! Language server bundled to src\main\resources\js\angelscript-language-server.js

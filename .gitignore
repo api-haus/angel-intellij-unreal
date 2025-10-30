@@ -4,3 +4,4 @@
 .qodana
 build
 private
+node_modules
