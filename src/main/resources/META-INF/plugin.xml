@@ -1,8 +1,14 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.sashi0034.angelintellij</id>
+    <id>api.haus.unreal-angelscript</id>
     <name>AngelScript Language Server</name>
-    <vendor url="https://github.com/sashi0034">sashi0034</vendor>
+    <vendor>API.Haus</vendor>
+
+    <description><![CDATA[
+    AngelScript for Unreal — IntelliJ plugin.
+    Fork of angel-intellij by sashi0034; credits preserved.
+    Uses Hazelight Unreal AngelScript Language Server.
+    ]]></description>
 
     <depends>com.intellij.modules.platform</depends>
     <depends>com.redhat.devtools.lsp4ij</depends>

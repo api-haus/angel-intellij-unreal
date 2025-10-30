@@ -1,43 +1,20 @@
-# AngelScript Language Server for IntelliJ
+# AngelScript for Unreal — IntelliJ Plugin
 
-![Build](https://github.com/sashi0034/angel-intellij/workflows/Build/badge.svg)
+![Build](../../actions/workflows/build.yml/badge.svg)
 [![Version](https://img.shields.io/jetbrains/plugin/v/26645-angelscript-language-server.svg)](https://plugins.jetbrains.com/plugin/26645-angelscript-language-server)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/26645-angelscript-language-server.svg)](https://plugins.jetbrains.com/plugin/26645-angelscript-language-server)
-
-[//]: # (## Template ToDo list)
-
-[//]: # (- [x] Create a new [IntelliJ Platform Plugin Template][template] project.)
-
-[//]: # (- [ ] Get familiar with the [template documentation][template].)
-
-[//]: # (- [ ] Adjust the [pluginGroup]&#40;./gradle.properties&#41; and [pluginName]&#40;./gradle.properties&#41;, as well as the [id]&#40;./src/main/resources/META-INF/plugin.xml&#41; and [sources package]&#40;./src/main/kotlin&#41;.)
-
-[//]: # (- [ ] Adjust the plugin description in `README` &#40;see [Tips][docs:plugin-description]&#41;)
-
-[//]: # (- [ ] Review the [Legal Agreements]&#40;https://plugins.jetbrains.com/docs/marketplace/legal-agreements.html?from=IJPluginTemplate&#41;.)
-
-[//]: # (- [ ] [Publish a plugin manually]&#40;https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html?from=IJPluginTemplate&#41; for the first time.)
-
-[//]: # (TODO: See below later)
-
-[//]: # (- [ ] Set the `MARKETPLACE_ID` in the above README badges. You can obtain it once the plugin is published to JetBrains Marketplace.)
-
-[//]: # (- [ ] Set the [Plugin Signing]&#40;https://plugins.jetbrains.com/docs/intellij/plugin-signing.html?from=IJPluginTemplate&#41; related [secrets]&#40;https://github.com/JetBrains/intellij-platform-plugin-template#environment-variables&#41;.)
-
-[//]: # (- [ ] Set the [Deployment Token]&#40;https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html?from=IJPluginTemplate&#41;.)
-
-[//]: # (- [ ] Click the <kbd>Watch</kbd> button on the top of the [IntelliJ Platform Plugin Template][template] to be notified about releases containing new features and fixes.)
 
 ## Plugin description
 
 <!-- Plugin description -->
-This plugin provides AngelScript language support for IntelliJ via [lsp4ij](https://github.com/redhat-developer/lsp4ij).
-     
-It utilizes the AngelScript Language Server to offer features such as code completion, go-to definition, and more.
+This fork provides AngelScript language support tailored for Unreal Engine projects, powered by [lsp4ij](https://github.com/redhat-developer/lsp4ij).
 
-This is a port of the version distributed with VSCode to IntelliJ. 
+It leverages the Unreal AngelScript Language Server to provide completion, go‑to definition, diagnostics, and more.
 
-Please read the original documentation for details: https://github.com/sashi0034/angel-lsp
+This is a port of the Unreal AngelScript VS Code tooling to IntelliJ‑based IDEs.
+
+- Upstream language server: https://github.com/Hazelight/vscode-unreal-angelscript/tree/master/language-server
+- Vendored source in this repo: `unreal-angelscript-lsp/language-server`
 
 **This plugin uses Node.js, so it must be installed.**
 
@@ -60,9 +37,8 @@ Note: This plugin is still in preview and under development.
 
 - Manually:
 
-  Download the [latest release](https://github.com/sashi0034/angel-intellij/releases/latest) and install it manually using
+  Download the [latest release](../../releases/latest) and install it manually using
   <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
-
 
 ---
 Plugin based on the [IntelliJ Platform Plugin Template][template].

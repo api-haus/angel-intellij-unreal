@@ -35,3 +35,5 @@
 - Descriptive naming
 - Error handling with try/catch where appropriate
 - Async/await for asynchronous operations
+- DO NOT UPDATE CHANGELOG.md! It is managed by CI pipeline.
+- 

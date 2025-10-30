@@ -5,20 +5,12 @@
 - LSP (lsp4ij) runs server; .as files recognized; basic lexer highlighting works.
 - Semantic token color provider implemented; file icons present.
 - Inline diagnostics working (errors underline and tooltip visible).
-- Status bar widget present, but can remain in "CONNECTING" state; needs reliability improvements.
 - Custom `angelscript/wantSave` notification handled.
 - Inlay hints, Code Lens, API Browser, Settings UI, Debugging not yet implemented/verified.
 
 ---
 
 ## Priorities
-
-- Medium: Unreal connection status indicator
-    - Fix stuck "connecting" state; detect disconnect/connect using:
-        - Arrival of Unreal diagnostics or type DB messages
-        - Socket error/close events surfaced by the server
-        - Initial parse/resolve milestones
-    - Improve tooltip and add quick actions (open LSP console / settings)
 
 - Medium: Inlay hints
     - Ensure LSP capability negotiation enables inlay hints
@@ -50,20 +42,6 @@
 ---
 
 ## Tasks and Notes
-
-### Unreal Connection Status Indicator (Medium)
-
-- Detect connection via:
-    - Unreal diagnostics arrivals (source = `as`)
-    - Type DB messages or timeouts from server
-    - Process start/stop hooks and error/close transitions
-- Update icon and tooltip on state changes; ensure it returns to DISCONNECTED
-- Optional: click opens LSP Console or Settings
-
-Acceptance:
-
-- State transitions reliably reflect real connection; no permanent "CONNECTING" unless attempting reconnect.
-- Integration test simulates diagnostics stream and asserts transitions DISCONNECTED → CONNECTING → CONNECTED → DISCONNECTED.
 
 ### Inlay Hints (Medium)
 
@@ -127,31 +105,6 @@ Acceptance:
 
 ## Technical Plan Details
 
-### Files to Add/Modify
-
-- `src/main/java/com/github/sashi0034/angelintellij/lsp/`
-    - `AngelScriptLanguageClient.java` (diagnostic logs, custom notifications)
-    - `AngelScriptConnectionProvider.java` (state events/telemetry)
-    - `AngelScriptLanguageServerFactory.java` (wire client)
-- `src/main/java/com/github/sashi0034/angelintellij/ui/`
-    - `AngelScriptConnectionStatusWidget.java` (status bar widget)
-- `src/main/java/com/github/sashi0034/angelintellij/settings/`
-    - `AngelScriptSettings.java`, `AngelScriptConfigurable.java`
-- `src/main/resources/META-INF/plugin.xml`
-    - Register status widget, service, configurable, and any action stubs
-- `src/main/resources/icons/`
-    - `angelscript-connected.svg`, `angelscript-connecting.svg`, `angelscript-disconnected.svg`
-
-### Client Hooks (examples)
-
-```java
-// Diagnostics (used to infer connection)
-// super.publishDiagnostics(params);
-
-// Custom notification example
-// if ("angelscript/wantSave".equals(method)) { FileDocumentManager.getInstance().saveAllDocuments(); }
-```
-
 ### Configuration → Server
 
 - Send `workspace/didChangeConfiguration` to update server settings (diagnostics, completion, inlay hints, code lenses,
@@ -173,7 +126,7 @@ Acceptance:
 
 ## Next Actions
 
-1. Improve Unreal connection indicator reliability (fix stuck CONNECTING).
+1. ~~Fix Unreal connection indicator.~~
 2. Enable and verify Inlay Hints.
 3. Enable and verify Code Lens + actions.
 4. Implement API Browser tool window.
